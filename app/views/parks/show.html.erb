@@ -5,14 +5,12 @@
 <% if false %>
 
 <%= turbo_frame_tag "park_details" do %>
-    <div class="grid grid-cols-1 gap-2">
-        <div>
-            <h1 class="text-xl font-bold"><%= @park.name %></h1>
-        </div>
+    <div>
+        <h1><%= @park.name %></h1>
+    </div>
 
-        <div>
-            <p><%= @park.description %></p>
-        </div>
+    <div>
+        <p><%= @park.description %></p>
     </div>
 <% end %>
 
