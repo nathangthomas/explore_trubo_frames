@@ -1,0 +1,34 @@
+<h1> Parks Index Page </h1>
+
+<div> 
+    <% @parks.each do |park| %>
+    <ul>
+        <%=link_to park.name, park_path(park.id)  %>
+    </ul>
+    <% end %>
+</div>
+
+<% if false %>
+
+<div class="grid gap-4">
+    <div>
+        <h1 class="text-2xl">National Parks Directory</h1>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+        <div>
+            <ul>
+                <% @parks.each do |park| %>
+                    <li><%= link_to park.name, park_path(park.id), data: { turbo_frame: 'park_details' } %></li>
+                <% end %>
+            </ul>
+        </div>
+
+        <div class="col-span-2">
+            <%= turbo_frame_tag "park_details" do %>
+                Click on a park for more details
+            <% end %>
+        </div>
+    </div>
+</div>
+<% end %>
